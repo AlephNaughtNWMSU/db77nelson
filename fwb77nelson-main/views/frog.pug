@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	h1= Search Results Frog
+	-
+	let arr = [
+		{color: blue, weight: '50', age_mo: '22'}, 
+		{color: green, weight: '40', age_mo: '17'}, 
+		{color: brown, weight: '67', age_mo: '5'}
+	]
+	div(class = "container-fluid")
+		div(class = "row")
+			each i,index in arr
+				div(class="col-sm-2" onclick='buy(${index})') #{i.color}
+				div(class="col-sm-2" onclick='buy(${index})') #{i.weight}
+				div(class="col-sm-2" onclick='buy(${index})') #{i.age_mo}
+	script.			
+		function buy(itemNo)
+		{
+			alert('you purchased Item ${itemNo+1}')
+		}
